@@ -1,7 +1,8 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        # O(n*m) time complexity   0(m) space complexity
-        k={val:i for i,val in enumerate(nums1)}
+        k={}
+        for i,val in enumerate(nums1):
+            k[val]=i
         list=[-1]*len(nums1)  
         for i in range (len(nums2)):
             if nums2[i] not in nums1:
@@ -14,7 +15,9 @@ class Solution:
         return list
         
         # O(m+n) Time O(m) Space
-        k={val:i for i,val in enumerate(nums1)}
+        k={}
+        for i,val in enumerate(nums1):
+            k[val]=i
         list=[-1]*len(nums1) 
         stack=[]
         for i in range (len(nums2)):
