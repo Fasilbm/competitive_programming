@@ -1,6 +1,6 @@
-# O(n*m) time complexity   0(m) space complexity
 class Solution:
-    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]: 
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        # O(n*m) time complexity   0(m) space complexity
         k={val:i for i,val in enumerate(nums1)}
         list=[-1]*len(nums1)  
         for i in range (len(nums2)):
@@ -12,5 +12,18 @@ class Solution:
                          list[m]=nums2[j]
                          break
         return list
-                    
-           
+        
+        # O(m+n) Time O(m) Space
+        k={val:i for i,val in enumerate(nums1)}
+        list=[-1]*len(nums1) 
+        stack=[]
+        for i in range (len(nums2)):
+            curr=nums2[i]
+            while stack and curr >stack[-1]:
+                val=stack.pop()
+                m=k[val]
+                list[m]=curr
+            if curr in nums1:
+                stack.append(curr)
+        return list  
+                
