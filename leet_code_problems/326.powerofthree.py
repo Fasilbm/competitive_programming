@@ -6,3 +6,6 @@ class Solution:
             return False
         else:
             return self.isPowerOfThree(n/3)
+
+        #Time complexity O(logn)
+        #Space Complexity O(1)
