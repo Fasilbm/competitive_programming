@@ -6,4 +6,7 @@ class Solution:
             return False
         else:
             return self.isPowerOfTwo(n/2)
+        
+  # Time Complexity O(logn)
+  # Space Complexity O(1)
             
