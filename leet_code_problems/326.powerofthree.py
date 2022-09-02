@@ -8,4 +8,4 @@ class Solution:
             return self.isPowerOfThree(n/3)
 
         #Time complexity O(logn)
-        #Space Complexity O(1)
+        #Space Complexity O(logn)
