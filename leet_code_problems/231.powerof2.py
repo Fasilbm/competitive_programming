@@ -8,5 +8,5 @@ class Solution:
             return self.isPowerOfTwo(n/2)
         
   # Time Complexity O(logn)
-  # Space Complexity O(1)
+  # Space Complexity O(logn)
             
