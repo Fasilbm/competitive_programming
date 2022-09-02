@@ -8,4 +8,4 @@ class Solution:
             return self.fib(n-1)+self.fib(n-2)
         
         #Time complexity O(2 ** n)
-        #Space complexity O(1)
+        #Space complexity O(2**n)
