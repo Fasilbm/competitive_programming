@@ -12,4 +12,6 @@ class Solution:
             return self.myPow(x*x,n//2)
         else:
             return x*self.myPow(x*x,n//2)
+        #Time Complexity O(logn)
+        #SPace Complexity O(logn)
         
