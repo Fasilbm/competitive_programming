@@ -14,3 +14,5 @@ class Solution:
                 stack.append(x)
                 x-=1
         return answer
+#Timecomplexity O(n**2)
+#space complexity O(n)
