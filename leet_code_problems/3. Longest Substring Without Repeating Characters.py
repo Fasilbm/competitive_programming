@@ -10,3 +10,5 @@ class Solution:
             char.add(s[i])
             res=max(res,i-l+1)
         return res
+    # time complexity O(n)
+    # space complexity O(n)
