@@ -33,6 +33,7 @@ class Solution:
                 return True
             else:
                 return False
+            
         def vertical_sum():
             count=3
             ref=grid[start_r][start_c]+grid[start_r][start_c+1]+grid[start_r][start_c+2]
@@ -48,6 +49,7 @@ class Solution:
                 return True
             else:
                 return False
+            
         def fwd_dig():
             summ=0
             i=start_r
@@ -61,6 +63,7 @@ class Solution:
                 return True
             else:
                 return False
+            
         def bwd_dig():
             summ=0
             i=row-1
