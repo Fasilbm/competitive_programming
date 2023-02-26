@@ -1,17 +1,22 @@
-import operator
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack=[]
-        notations = {'+':operator.add,
-                     '-':operator.sub,'*':operator.mul,'/':operator.truediv}
+        ans=int(tokens[0])
         for i in tokens:
-            if i=='+'or i=='-' or i=='*' or i=='/':
-                second=stack.pop()
-                first=stack.pop()
-                stack.append(int(notations[i](first,second)))
-            else:
+            if i!="+" and i!="-" and i!="*" and i!="/":
                 stack.append(int(i))
-        return stack[-1]
-    # Time complexity O(n)
-    # Space Complexity O(1)
-        
+            else:
+                if i=="+":
+                    ans=stack[-2]+stack[-1]
+                elif i=="-":
+                    ans=stack[-2]-stack[-1]
+                elif i=="*":
+                    ans=stack[-2]*stack[-1]
+                else:
+                    ans=int(stack[-2]/stack[-1])
+                
+                stack.pop()
+                stack.pop()
+                stack.append(ans)
+        return ans
+     
