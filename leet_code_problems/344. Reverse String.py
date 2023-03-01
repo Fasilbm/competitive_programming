@@ -11,3 +11,29 @@ class Solution:
             rp-=1
         # Time complexity O(n)
         # Space complexity O(1)
+        
+class Solution:
+    def reverseString(self, s) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+
+        def pointers(l,r):
+            if l<r:
+
+                s[l],s[r] = s[r],s[l]
+                l+=1
+                r-=1
+                pointers(l,r)
+            else:
+                return s
+                
+        pointers(0,len(s)-1)
+        
+      
+
+     
+
+
+
+    
