@@ -15,7 +15,7 @@ class Solution:
 
                 Sum += math.ceil(i/mid)
 
-            if Sum > threshol1283. Find the Smallest Divisor Given a Threshold.pyd :
+            if Sum > threshold :
 
                 l = mid + 1
 
@@ -26,4 +26,4 @@ class Solution:
         return l
 
 
-             .py
+      
