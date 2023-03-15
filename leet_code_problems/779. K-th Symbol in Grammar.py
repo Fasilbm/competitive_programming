@@ -1,15 +1,22 @@
 class Solution:
     def kthGrammar(self, n: int, k: int) -> int:
-        if n==1: return 0
-        parent=self.kthGrammar(n-1,ceil(k/2))
-        odd=(k%2==1)
-        if parent==1:
-            return 1 if odd else 0
-        elif parent==0:
-            return 0 if odd else 1
-        
-        
-        #Timecomplexity O(nlogk)
-        #Spacecomlexity O(n)
-            
-            
+
+
+        def checker(n,k):
+
+            if n==1:
+
+                return 0
+
+            elif k <= 2**(n-2):
+
+                ans = checker(n-1,k)
+
+            else:
+
+                ans = 1 - checker(n-1,k-2**(n-2))
+
+
+            return  ans
+
+        return checker(n,k)
