@@ -19,6 +19,27 @@ class Solution:
         for i in checker:
             if i not in nums:
                 return i
+class Solution:
+        def missingNumber(self, nums: List[int]) -> int:
+
+            i=0
+            while i<len(nums):
+                corr = nums[i]
+                if i!=corr and corr!=len(nums):
+                    nums[corr],nums[i]=nums[i],nums[corr]
+                else:
+                    i+=1
+            for i in range(len(nums)):
+                if nums[i]!=i:
+                    return i
+
+            return len(nums)
+
+
+
+            
+
+
             
 
 
