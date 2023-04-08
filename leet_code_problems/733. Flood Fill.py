@@ -2,8 +2,7 @@ class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
             directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
             visited = [[0 for i in range(len(image[0]))] for j in range(len(image))]
-            def inbound(row, col):
-                return (0 <= row < len(image) and 0 <= col < len(image[0]))
+            inbound= lambda row,col: 0 <= row < len(image) and 0 <= col < len(image[0])
             def dfs(image, visited, row, col,color):
                 # base case
                 visited[row][col] = True
