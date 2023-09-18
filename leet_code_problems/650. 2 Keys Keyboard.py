@@ -54,6 +54,31 @@ class Solution:
         x=gcd(n)
         return x
 
+
+class Solution:
+    def minSteps(self, n: int) -> int:
+        @cache
+        def find_divisors(number):
+            divisors = []
+            for i in range(1, number//2):
+                if number % i == 0:
+                    divisors.append(i)
+            return divisors
+
+        def get_min(num):
+            if num == 1:
+                return 0
+            ans = num
+            for i in find_divisors(num):
+                paste = (num//i)-1
+                steps = get_min(i)
+                ans=min(ans,steps+1+paste)
+            return ans
+        return get_min(n)
+
+
+       
+
         
 
             
